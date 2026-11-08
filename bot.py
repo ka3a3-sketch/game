@@ -14,10 +14,13 @@ from aiogram.filters import Command
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.types import MenuButtonWebApp, WebAppInfo
 
+# --- НАСТРОЙКИ ---
 TOKEN = os.getenv("BOT_TOKEN", "9015659427:AAEHv6oruPJswEq_q4_F0999F_ixYtIz538")
 GAME_URL = "https://ka3a3-sketch.github.io/arcade-hub/"
-WEB_SERVER_HOST = "127.0.0.1"
-WEB_SERVER_PORT = 8081
+
+# ВАЖНО: Настройки для работы на Render и других облачных сервисах
+WEB_SERVER_HOST = "0.0.0.0"
+WEB_SERVER_PORT = int(os.getenv("PORT", 8081))
 
 logging.basicConfig(level=logging.INFO)
 
